@@ -8,9 +8,15 @@ import java.time.OffsetDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class MeetingRoomGovernanceServiceTests {
     private final MeetingRoomGovernanceService service = new MeetingRoomGovernanceService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void rejectsConflictingUndersizedRoom() {
         var start = OffsetDateTime.parse("2026-09-01T10:00:00+08:00");
         var result = service.govern(new MeetingRoomGovernanceService.Request(
@@ -20,6 +26,9 @@ class MeetingRoomGovernanceServiceTests {
         assertThat(result.blockers()).hasSize(2);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void confirmsGovernedVisitorBooking() {
         var start = OffsetDateTime.parse("2026-09-01T10:00:00+08:00");
         var result = service.govern(new MeetingRoomGovernanceService.Request(

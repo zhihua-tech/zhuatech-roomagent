@@ -10,9 +10,16 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 企业会议室预订治理，避免资源冲突并支持访客、安全和无障碍要求。 */
+/**
+ * 企业会议室预订治理，避免资源冲突并支持访客、安全和无障碍要求。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class MeetingRoomGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Decision govern(Request request) {
         List<String> blockers = new ArrayList<>();
         if (!request.endAt().isAfter(request.startAt())) blockers.add("会议结束时间必须晚于开始时间");
@@ -35,6 +42,9 @@ public class MeetingRoomGovernanceService {
                 List.copyOf(blockers), List.copyOf(controls));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String bookingNo, @Min(1) int attendeeCount,
                           @Min(1) int roomCapacity, @Min(0) int conflictingBookingCount,
                           boolean accessibilityRequired, boolean accessibilityAvailable,
@@ -43,6 +53,9 @@ public class MeetingRoomGovernanceService {
                           boolean organizerAssigned, @NotNull OffsetDateTime startAt,
                           @NotNull OffsetDateTime endAt) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Decision(String bookingNo, String route, boolean bookingAllowed,
                            OffsetDateTime noShowReleaseAt, List<String> blockers,
                            List<String> controls) {}
