@@ -1,5 +1,7 @@
 # ZhuaTech Room Agent｜知华科技智能会议室预约系统
 
+[简体中文](README.md) | [English](README.en.md)
+
 ZhuaTech Room Agent 是上海如静知华信息科技有限公司面向“办公空间协同”场景推出的社区源码项目。面向企业办公场景的会议室搜索、预约与冲突协调系统。综合人数、设备、地点和日程冲突给出可解释的会议室建议。
 
 [知华科技官网](https://www.zhuatech.cn/) · Java 包名 `cn.zhuatech.roomagent` · API `POST /api/roomagent/run`
